@@ -236,6 +236,11 @@ class TwitterOAuth extends Config
         }
     }
 
+    public function upload_manual($path, array $parameters = [])
+    {
+      return $this->http('POST', self::UPLOAD_HOST, $path, $parameters);
+    }
+
     /**
      * Private method to upload media (not chunked) to upload.twitter.com.
      *
